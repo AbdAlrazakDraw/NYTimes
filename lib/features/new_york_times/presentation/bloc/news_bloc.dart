@@ -42,7 +42,7 @@ class NewsBloc extends Bloc<NewsEvents, NewsState> {
         for (var ele in state.newsEntity.results!) {
           if (ele.title!.toLowerCase().contains(event.value.toLowerCase()) ||
               ele.abstract!.toLowerCase().contains(event.value.toLowerCase())) {
-            print("hello");
+
             temp.add(ele);
           }
         }

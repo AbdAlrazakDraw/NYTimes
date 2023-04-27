@@ -28,7 +28,7 @@ void main() {
       num_results: 10, copyright: "test", status: "true", results: []);
 
   group('get current News', () {
-    final tCityName = 'Jakarta';
+
 
     test(
       'should return current News when a call to data source is successful',

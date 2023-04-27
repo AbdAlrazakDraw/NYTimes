@@ -36,8 +36,9 @@ class NewsCard extends StatelessWidget {
                               .metadata !=
                           null
                   ? CircleAvatar(
-                      radius: 40.r,
+                      radius: 30.r,
                       backgroundColor: Colors.grey,
+
                       backgroundImage: NetworkImage(newsData.media!
                           .where((element) => element.type == "image")
                           .first
@@ -46,7 +47,7 @@ class NewsCard extends StatelessWidget {
                           .url!),
                     )
                   : CircleAvatar(
-                      radius: 40.r,
+                      radius: 30.r,
                       backgroundColor: Colors.grey,
                     ),
             ),
@@ -66,31 +67,31 @@ class NewsCard extends StatelessWidget {
                     SizedBox(
                       height: 10.h,
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text(
-                          newsData.byline ?? "",
-                          style: const TextStyle(
-                            color: Colors.grey,
-                            height: 1.5,
+                        Expanded(
+                          child: Text(
+                            newsData.byline ?? "",
+                            maxLines: 2,
+                            style: const TextStyle(
+                              color: Colors.grey,
+                              height: 1.5,
+
+                            ),
                           ),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Icon(
-                              Icons.calendar_month,
-                              color: Colors.grey,
-                              size: 16.sp,
-                            ),
-                            SizedBox(
-                              width: 5.w,
-                            ),
-                            Text(newsData.published_date ?? "",
-                                style: const TextStyle(color: Colors.grey)),
-                          ],
+                        Icon(
+                          Icons.calendar_month,
+                          color: Colors.grey,
+                          size: 16.sp,
                         ),
+                        SizedBox(
+                          width: 5.w,
+                        ),
+                        Text(newsData.published_date ?? "",
+                            style: const TextStyle(color: Colors.grey)),
                       ],
                     ),
                   ]),
@@ -102,7 +103,7 @@ class NewsCard extends StatelessWidget {
                   child: Icon(
                     Icons.arrow_forward_ios,
                     color: Colors.black54,
-                    size: 16.sp,
+                    size: 20.sp,
                   )),
             )
           ],

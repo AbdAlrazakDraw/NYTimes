@@ -42,7 +42,6 @@ class _NewsPageState extends State<NewsPage> {
                 ? TextField(
                     textInputAction: TextInputAction.search,
                     onChanged: (value) {
-                      print(value);
                       bloc.onSearchNewsEvent(value);
                     },
                     decoration: InputDecoration(

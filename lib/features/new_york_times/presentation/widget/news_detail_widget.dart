@@ -28,6 +28,7 @@ class NewsDetailWidget extends StatelessWidget {
                     fontSize: 16.sp,
                     color: Colors.black),
           ),
+          SizedBox(height: 8.h),
           Text(
             value,
             style: TextStyle(

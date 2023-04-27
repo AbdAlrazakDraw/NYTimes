@@ -16,7 +16,7 @@ class NewsDetailsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           newsDataEntity.title ?? "",
-          style: TextStyle(fontWeight: FontWeight.normal),
+          style: const TextStyle(fontWeight: FontWeight.normal),
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),
@@ -41,7 +41,7 @@ class NewsDetailsPage extends StatelessWidget {
               Column(
                 children: [
                   NewsDetailWidget(
-                    title: "Abstract ",
+                    title: "Abstract",
                     textStyle: TextStyle(
                         color: Theme.of(context).colorScheme.primary,
                         fontWeight: FontWeight.bold,
@@ -59,7 +59,7 @@ class NewsDetailsPage extends StatelessWidget {
               Column(
                 children: [
                   NewsDetailWidget(
-                    title: "Caption ",
+                    title: "Caption",
                     textStyle: TextStyle(
                         color: Theme.of(context).colorScheme.primary,
                         fontWeight: FontWeight.bold,
@@ -92,7 +92,7 @@ class NewsDetailsPage extends StatelessWidget {
                     newsDataEntity.byline!.isNotEmpty)
                   Expanded(
                     child: NewsDetailWidget(
-                      title: "By: ",
+                      title: "By:",
                       value: newsDataEntity.byline ?? "",
                     ),
                   ),
@@ -100,7 +100,7 @@ class NewsDetailsPage extends StatelessWidget {
                     newsDataEntity.source!.isNotEmpty)
                   Expanded(
                     child: NewsDetailWidget(
-                      title: "source: ",
+                      title: "source:",
                       value: newsDataEntity.source ?? "",
                     ),
                   ),
@@ -116,7 +116,7 @@ class NewsDetailsPage extends StatelessWidget {
                     newsDataEntity.published_date!.isNotEmpty)
                   Expanded(
                     child: NewsDetailWidget(
-                      title: "Published at: ",
+                      title: "Published at:",
                       value: newsDataEntity.published_date ?? "",
                     ),
                   ),
@@ -124,7 +124,7 @@ class NewsDetailsPage extends StatelessWidget {
                     newsDataEntity.updated!.isNotEmpty)
                   Expanded(
                     child: NewsDetailWidget(
-                      title: "updated at: ",
+                      title: "updated at:",
                       value: newsDataEntity.updated ?? "",
                     ),
                   ),
@@ -140,7 +140,7 @@ class NewsDetailsPage extends StatelessWidget {
                     newsDataEntity.section!.isNotEmpty)
                   Expanded(
                     child: NewsDetailWidget(
-                      title: "Section: ",
+                      title: "Section:",
                       value: newsDataEntity.section ?? "",
                     ),
                   ),
@@ -148,7 +148,7 @@ class NewsDetailsPage extends StatelessWidget {
                     newsDataEntity.type!.isNotEmpty)
                   Expanded(
                     child: NewsDetailWidget(
-                      title: "Type: ",
+                      title: "Type:",
                       value: newsDataEntity.type ?? "",
                     ),
                   ),
@@ -160,7 +160,7 @@ class NewsDetailsPage extends StatelessWidget {
             if (newsDataEntity.des_facet != null &&
                 newsDataEntity.des_facet!.isNotEmpty)
               NewsDetailWidget(
-                title: "Tags: ",
+                title: "Tags:",
                 value: newsDataEntity.des_facet.toString().substring(
                     1, newsDataEntity.des_facet.toString().length - 1),
               ),
@@ -172,7 +172,7 @@ class NewsDetailsPage extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.r),
                 child: RichText(
-                  maxLines: 3,
+                  maxLines: 4,
                   text: TextSpan(children: [
                     TextSpan(
                       text: "Link to full article ",
@@ -181,6 +181,7 @@ class NewsDetailsPage extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 18.sp),
                     ),
+
                     WidgetSpan(
                       child: InkWell(
                           onTap: () {
@@ -189,12 +190,15 @@ class NewsDetailsPage extends StatelessWidget {
                               launchUrlString(newsDataEntity.url!);
                             }
                           },
-                          child: Text(
-                            newsDataEntity.url ?? "",
-                            style: TextStyle(
-                                fontWeight: FontWeight.normal,
-                                fontSize: 16.sp,
-                                color: Colors.blue),
+                          child: Padding(
+                            padding:   EdgeInsets.symmetric(vertical: 8.h),
+                            child: Text(
+                              newsDataEntity.url ?? "",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 12.sp,
+                                  color: Colors.blue),
+                            ),
                           )),
                     ),
                   ]),
