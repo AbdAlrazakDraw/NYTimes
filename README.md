@@ -4,7 +4,7 @@ Assignment test for flutter job position.
 
 ### Running the app
 
-To run this app you need to be downloaded Android studio, Flutter latest sdk(3.3.1):
+To run this app you need to be downloaded Android studio, Flutter latest sdk(3.7.7):
 
 * Clone the project to android studio.
 * Run `Flutter pub get` in android studio terminal.
