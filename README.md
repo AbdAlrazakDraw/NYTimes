@@ -27,9 +27,8 @@ To generate code coverage report you need to be downloaded git ([git download li
 * Run `flutter test --coverage` in android studio terminal.
 * Open git bash in project absolute path as shown:
 
-<p align="center">
- <img width="800" alt="wonderous-banner-800w" src="read_me_images/git bash.png">
-</p>
+![image](https://user-images.githubusercontent.com/41840691/234770129-fefc5ad7-ab41-4c8e-adb5-875f6b7e2138.png)
+
 
 * Run `./genhtml.perl ./coverage/lcov.info -o coverage/html` in git bash window.
 
